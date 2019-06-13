@@ -1,0 +1,2 @@
+com.example.framelibrary
+string app_name
