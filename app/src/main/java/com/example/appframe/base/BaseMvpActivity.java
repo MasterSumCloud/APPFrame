@@ -2,6 +2,11 @@ package com.example.appframe.base;
 
 import android.os.Bundle;
 import androidx.annotation.Nullable;
+import androidx.lifecycle.Lifecycle;
+
+import com.uber.autodispose.AutoDispose;
+import com.uber.autodispose.AutoDisposeConverter;
+import com.uber.autodispose.android.lifecycle.AndroidLifecycleScopeProvider;
 
 /**
  * author: eagle
@@ -14,7 +19,6 @@ public abstract class BaseMvpActivity<T extends BasePresenter> extends BaseActiv
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
 
@@ -30,10 +34,10 @@ public abstract class BaseMvpActivity<T extends BasePresenter> extends BaseActiv
      * 绑定生命周期 防止MVP内存泄漏
      *
      */
-   /* @Override
+    @Override
     public <T> AutoDisposeConverter<T> bindAutoDispose() {
         return AutoDispose.autoDisposable(AndroidLifecycleScopeProvider
                 .from(this, Lifecycle.Event.ON_DESTROY));
-    }*/
+    }
 
 }

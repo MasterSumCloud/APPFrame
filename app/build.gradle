@@ -27,6 +27,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
@@ -37,4 +39,19 @@ dependencies {
     //Rxjava Rxandroid
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.9'
+    //防止RX泄露
+    implementation 'com.uber.autodispose:autodispose:1.3.0'
+    implementation 'com.uber.autodispose:autodispose-android:1.3.0'
+    implementation 'com.uber.autodispose:autodispose-android-archcomponents:1.3.0'
+    //安卓工具类 使用参考 https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/README.md
+    implementation 'com.blankj:utilcodex:1.24.2'
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    //今天头条适配方案 使用方法参考 https://github.com/JessYanCoding/AndroidAutoSize
+    implementation 'me.jessyan:autosize:1.1.2'
+    //Gson 转换需要
+    implementation 'com.google.code.gson:gson:2.8.2'
 }

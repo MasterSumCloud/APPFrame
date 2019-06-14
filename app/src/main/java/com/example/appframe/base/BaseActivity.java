@@ -17,6 +17,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         mUnBinder = ButterKnife.bind(this);
         initView();
+        initData();
+        initListener();
     }
 
     @Override
@@ -26,7 +28,23 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * 获取布局ID
+     */
     public abstract int getLayoutId();
 
+    /**
+     * 初始化View
+     */
     public abstract void initView();
+
+    /**
+     * 初始化Data
+     */
+    public abstract void initData();
+
+    /**
+     * 初始化监听器
+     */
+    public abstract void initListener();
 }

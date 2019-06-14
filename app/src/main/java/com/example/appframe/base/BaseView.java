@@ -1,5 +1,7 @@
 package com.example.appframe.base;
 
+import com.uber.autodispose.AutoDisposeConverter;
+
 /**
  * author: eagle
  * created on: 2019-06-13 13:16
