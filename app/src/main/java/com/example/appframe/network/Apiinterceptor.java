@@ -1,11 +1,14 @@
 package com.example.appframe.network;
 
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.LogUtils;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.JsonParser;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -40,6 +43,7 @@ public class Apiinterceptor {
 
 
     public final String TAG = "Request";
+
     /**
      * 访问的request
      */
@@ -75,7 +79,7 @@ public class Apiinterceptor {
     };
 
 
-    public ApiRetrofit() {
+    public void ApiRetrofit() {
         if (mLogging == null) {
             mLogging = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
                 @Override
@@ -109,6 +113,18 @@ public class Apiinterceptor {
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .baseUrl(BASE_URL)
                 .build().create(ApiService.class);
+    }
+
+    public static boolean isGoodJson(String json) {
+        if (TextUtils.isEmpty(json)) {
+            return false;
+        }
+        try {
+            new JsonParser().parse(json);
+            return true;
+        } catch (JsonParseException e) {
+            return false;
+        }
     }
 
 }
