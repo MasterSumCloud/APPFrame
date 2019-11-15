@@ -1,5 +1,6 @@
 package com.example.appframe.base;
 
+import com.bumptech.glide.load.HttpException;
 import com.google.gson.JsonParseException;
 
 import org.json.JSONException;
@@ -10,7 +11,6 @@ import java.net.UnknownHostException;
 import java.text.ParseException;
 
 import io.reactivex.observers.DisposableObserver;
-import retrofit2.HttpException;
 
 /**
  * author: eagle
